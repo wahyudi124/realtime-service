@@ -13,11 +13,11 @@ io.on('connection', function (socket) {
       })
   
       socket.on('rectifier_in_data', data =>{
-        io.emit('rectifier_datas',data)
+        io.in('room_rectifier').emit('rectifier_datas',data)
       })
 
       socket.on('ups_in_data', data =>{
-        io.emit('ups_data',data)
+        io.in('room_ups').emit('ups_datas',data)
       })
       console.log(socket.id)
 });
